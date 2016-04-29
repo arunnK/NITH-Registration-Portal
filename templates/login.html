@@ -1,0 +1,100 @@
+<!DOCTYPE  html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>NITH Registration Portal</title>
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/static/css/social-icons.css" type="text/css" media="screen" />
+		
+		<link rel="stylesheet" href="/static/css/nivo-slider.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/static/css/tabs.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="screen" />
+		<link rel="stylesheet" media="screen" href="/static/css/superfish.css" /> 
+		<link rel="stylesheet" media="screen" href="/static/css/superfish-left.css" /> 
+		<link rel="stylesheet" href="js/poshytip-1.0/src/tip-twitter/tip-twitter.css" type="text/css" />
+		<link rel="stylesheet" href="js/poshytip-1.0/src/tip-yellowsimple/tip-yellowsimple.css" type="text/css" />
+		<link rel="stylesheet" href="/static/css/jquery.tweet.css" media="all"  type="text/css"/> 
+		<link rel="stylesheet" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+	</head>
+	
+	<body>
+
+						
+			
+			<!-- Menu -->
+			<div id="menu">
+			
+				
+				<!-- ENDS menu-holder -->
+				<div id="menu-holder">
+					<!-- wrapper-menu -->
+					<div class="wrapper">
+						<!-- Navigation -->
+						<ul id="nav" class="sf-menu">
+							<li><a href="index.html">NITH Registration Portal</a></li>
+						</ul>
+						<!-- Navigation -->
+					</div>
+					<!-- wrapper-menu -->
+				</div>
+				<!-- ENDS menu-holder -->
+			</div>
+			<!-- ENDS Menu -->
+			
+			
+			
+
+			
+			<!-- MAIN -->
+			<div id="main">
+				<!-- wrapper-main -->
+				
+					
+					<!-- content -->
+					
+										<div id="this1">
+						<div class="two-third">
+			            <script type="text/javascript">
+        						function noBack()
+         						{
+             					window.history.forward()
+         						}
+        						noBack();
+        						window.onload = noBack;
+        						window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+        						window.onunload = function() { void (0) }
+    						</script>	
+						<h1><p class="green-box">Login</p></h1>
+						{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+						<form id="contactForm2" action="{% url 'register:logincheck' %}" method="post"><br/><br/>
+						{% csrf_token %}						
+		<fieldset>
+									
+										<input name="roll" id="name" type="text" placeholder="Roll No." class="form-poshytip" title="Enter your roll no." /><br/>
+									
+									
+										<input name="pass"  id="email" type="password" placeholder="Password" class="form-poshytip" title="Enter your Password" /><br/>
+																									
+									<p ><input type="submit"  value="LOGIN" name="login" id="submit" /></p>
+								</fieldset>
+							</form>
+							<p><form id="contactForm2" action="#" method="post">
+										
+		<input type="button" value="Register" onclick="window.location.href='register.html'" />
+						</form></p>
+												
+						<h1><a href=""><p class="blue-box"><br/><br/><br/><br/><br/><br/></p></a></h1>
+			            </div>
+												</div>
+					
+
+				
+				<!-- ENDS wrapper-main -->
+			</div>
+			<!-- ENDS MAIN -->
+			
+	</body>
+</html>

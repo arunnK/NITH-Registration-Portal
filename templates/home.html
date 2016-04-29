@@ -1,0 +1,108 @@
+<!DOCTYPE  html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Welcome User</title>
+		
+		<!-- CSS -->
+		{% load staticfiles %}
+		<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/static/css/social-icons.css" type="text/css" media="screen" />
+		
+		<link rel="stylesheet" href="/static/css/nivo-slider.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/static/css/tabs.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css" type="text/javascript" media="screen" />
+		<link rel="stylesheet" media="screen" href="/static/css/superfish.css" /> 
+		<link rel="stylesheet" media="screen" href="/static/css/superfish-left.css" /> 
+		<link rel="stylesheet" href="js/poshytip-1.0/src/tip-twitter/tip-twitter.css" type="text/javascript" />
+		<link rel="stylesheet" href="js/poshytip-1.0/src/tip-yellowsimple/tip-yellowsimple.css" type="text/javascript" />
+		<link rel="stylesheet" href="/static/css/jquery.tweet.css" media="all"  type="text/css"/> 
+		<link rel="stylesheet" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" type="text/javascript" media="screen" />
+
+	</head>
+	
+	<body>
+
+						
+			
+			<!-- Menu -->
+			<div id="menu">
+			
+				
+				<!-- ENDS menu-holder -->
+				<div id="menu-holder">
+					<!-- wrapper-menu -->
+					<div class="wrapper">
+						<!-- Navigation -->
+						<ul id="nav" class="sf-menu">
+							<li><a href="index.html">NITH Registration Portal</a></li>
+						</ul>
+						<ul id="nav" class="right">
+							<li><a>{{username}}</a></li><li><a>{{Photo}}</a></li>
+						</ul>
+						<!-- Navigation -->
+					</div>
+					<!-- wrapper-menu -->
+				</div>
+				<!-- ENDS menu-holder -->
+			</div>
+			<!-- ENDS Menu -->
+			
+			
+			
+
+			
+			<!-- MAIN -->
+			<div id="main1">
+				<!-- wrapper-main -->
+				
+					
+					<!-- content -->
+					
+										<div id="this">
+						<div class="full">
+						<h1><p class="gray-box">Welcome {{username}}<br/>Pay institution fee</p></h1><br/>
+						<form id="contactForm" action="step1/getfee/" method="post">
+						{% csrf_token %}
+						Semester Fee payment (Choose Your Year) - 
+						<select name='year' onchange='this.form.submit()' width="288" style="width:288px">
+							<option value="1">select</option>
+							<option value="1st/odd">1st/odd</option>
+					<option value="1st/even">1st/even</option>							
+							<option value="2nd/odd">2nd/odd</option>
+							<option value="2nd/even">2nd/even</option>
+							<option value="3rd/odd">3rd/odd</option>
+							<option value="3rd/even">3rd/even</option>
+							<option value="4th/odd">4th/odd</option>
+							<option value="4th/even">4th/even</option>
+							<option value="5th/odd">5th/odd</option>
+							<option value="5th/even">5th/even</option>
+						</select><br>
+						<p><noscript><input type="submit" value="Send" name="sem" id="submit" /></noscript></p>
+						</form>
+						
+						<p>Amount to be paid for {{year_sem}}- {{Amount}}</p><br/>
+						<div id="center">
+						<p><form id="contactForm" action="pay1/" method="post">
+							{% csrf_token%}
+							<input type="submit" value="Pay"/>
+						</form></p>
+						</div>
+						<div id="center">
+						<p><form id="contactForm" action="logout/" method="post">
+							{% csrf_token %}
+							<input type="submit" value="Logout" onclick="window.location.href='pay.html'" />
+						</form></p>
+						</div>
+						</div>
+						
+												</div>
+					
+
+				
+				<!-- ENDS wrapper-main -->
+			</div>
+			<!-- ENDS MAIN -->
+			
+	</body>
+</html>

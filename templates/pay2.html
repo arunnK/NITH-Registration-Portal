@@ -1,0 +1,129 @@
+<!DOCTYPE  html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Welcome User</title>
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/static/css/social-icons.css" type="text/css" media="screen" />
+		
+		<link rel="stylesheet" href="c/static/ss/nivo-slider.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/static/css/tabs.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="js/prettyPhoto/css/prettyPhoto.css" type="text/css" media="screen" />
+		<link rel="stylesheet" media="screen" href="/static/css/superfish.css" /> 
+		<link rel="stylesheet" media="screen" href="/static/css/superfish-left.css" /> 
+		<link rel="stylesheet" href="js/poshytip-1.0/src/tip-twitter/tip-twitter.css" type="text/css" />
+		<link rel="stylesheet" href="js/poshytip-1.0/src/tip-yellowsimple/tip-yellowsimple.css" type="text/css" />
+		<link rel="stylesheet" href="/static/css/jquery.tweet.css" media="all"  type="text/css"/> 
+		<link rel="stylesheet" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+	</head>
+	
+	<body>
+
+						
+			
+			<!-- Menu -->
+			<div id="menu">
+			
+				
+				<!-- ENDS menu-holder -->
+				<div id="menu-holder">
+					<!-- wrapper-menu -->
+					<div class="wrapper">
+						<!-- Navigation -->
+						<ul id="nav" class="sf-menu">
+							<li><a href="index.html">NITH Registration Portal</a></li>
+						</ul>
+						<!-- Navigation -->
+					</div>
+					<!-- wrapper-menu -->
+				</div>
+				<!-- ENDS menu-holder -->
+			</div>
+			<!-- ENDS Menu -->
+			
+			
+			
+
+			
+			<!-- MAIN -->
+			<div id="main1">
+				<!-- wrapper-main -->
+				
+					
+					<!-- content -->
+					<!--this script is user to disable back button mean from caching the page-->
+							<script type="text/javascript">
+        						function noBack()
+         						{
+             					window.history.forward()
+         						}
+        						noBack();
+        						window.onload = noBack;
+        						window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+        						window.onunload = function() { void (0) }
+    						</script>	
+										<div id="this">
+						<div class="full">
+						<h1><p class="gray-box">Pay fees through Debit/Credit/Visa card</p></h1><br/>
+						<form id="contactForm2" action="pay2check/" method="post">
+							{% csrf_token %}
+								<fieldset>
+									{% if error_message %}{{ error_message }}{% endif %}</br>
+									Enter your Card no.
+										<input name="cno" maxlength="16" pattern="[0-9]*" id="name" type="text" class="form-poshytip" title="Enter your roll no." /><br/>
+									
+									Choose Expiration date
+									<select name="month" width="288" style="width:142px">
+										<option>Month</option>
+										<option>01</option>
+										<option>02</option>
+										<option>03</option>
+										<option>04</option>
+										<option>05</option>
+										<option>06</option>
+										<option>07</option>
+										<option>08</option>
+										<option>09</option>
+										<option>10</option>
+										<option>11</option>
+										<option>12</option>
+										</select>
+										
+										<select name="year" width="288" style="width:142px">
+										<option>Year</option>
+										<option>20</option>
+										<option>21</option>
+										<option>22</option>
+										<option>23</option>
+										<option>24</option>
+										<option>25</option>
+										<option>26</option>
+										<option>27</option>
+										<option>28</option>
+										<option>29</option>
+										<option>30</option>
+										<option>31</option>
+										</select><br/>
+
+									Enter CVV
+										<input name="cvv" maxlength="3" id="email" type="password" class="form-poshytip" title="Enter your Password" /><br/>
+																									<br/>
+							<p><input type="submit" value="Pay"/></p>		
+								</fieldset>
+							</form>						
+                        </div>
+												
+						
+												</div>
+					
+
+				
+				<!-- ENDS wrapper-main -->
+			</div>
+			<!-- ENDS MAIN -->
+			
+	</body>
+</html>
